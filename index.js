@@ -148,7 +148,9 @@ class Car {
     if (distance <= milesCanDrive) {
       this.odometer = this.odometer + distance
       return this.odometer
-    }
+    } 
+    this.odometer = this.odometer + milesCanDrive
+    return this.odometer
   }
 
   /**
