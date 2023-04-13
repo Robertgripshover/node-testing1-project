@@ -4,34 +4,56 @@
  * @returns {object} - a copy of the object with strings trimmed
  *
  * EXAMPLE
- * trimProperties({ name: '  jane  ' }) // returns a new object { name: 'jane' }
+ * trimProperties({ name: '  jane  ' }) // returns a new object
+ *  { name: 'jane' }
  */
 function trimProperties(obj) {
-  // ✨ implement
-}
+  let result = {}
+  for (let prop in obj) { //<< the 'prop' represents each property in the object
+    result[prop] = obj[prop].trim() //<< this is saying for each property
+    //of the object just trim them of white space
+  } 
+  return result
+} 
+
+
 
 /**
- * [Exercise 2] trimPropertiesMutation trims in place the properties of an object
+ * [Exercise 2] trimPropertiesMutation trims in place the properties
+ *  of an object
  * @param {object} obj - an object with properties that are strings
  * @returns {object} - the same object with strings trimmed
  *
  * EXAMPLE
- * trimPropertiesMutation({ name: '  jane  ' }) // returns the object mutated in place { name: 'jane' }
+ * trimPropertiesMutation({ name: '  jane  ' }) // returns the object
+ *  mutated in place { name: 'jane' }
  */
 function trimPropertiesMutation(obj) {
-  // ✨ implement
+  for (let prop in obj) { //<< the 'prop' represents each property in the object
+    obj[prop] = obj[prop].trim() //<< this is saying for each property
+    //of the object just trim them of white space
+  } 
+  return obj
 }
 
 /**
- * [Exercise 3] findLargestInteger finds the largest integer in an array of objects { integer: 1 }
+ * [Exercise 3] findLargestInteger finds the largest integer in an 
+ * array of objects { integer: 1 }
  * @param {object[]} integers - an array of objects
  * @returns {number} - the largest integer
  *
  * EXAMPLE
- * findLargestInteger([{ integer: 1 }, { integer: 3 }, { integer: 2 }]) // returns 3
+ * findLargestInteger([{ integer: 1 }, { integer: 3 },
+ *  { integer: 2 }]) // returns 3
  */
 function findLargestInteger(integers) {
-  // ✨ implement
+  let result = integers[0].integer 
+  for (let idx = 0; idx < integers.length; idx++) {
+    if (integers[idx].integer > result) {
+      result = integers[idx].integer
+    }
+  }
+  return result
 }
 
 class Counter {
@@ -99,7 +121,8 @@ class Car {
   }
 
   /**
-   * [Exercise 6B] Car.prototype.drive adds miles to the odometer and consumes fuel according to mpg
+   * [Exercise 6B] Car.prototype.drive adds miles to the odometer and 
+   * consumes fuel according to mpg
    * @param {string} distance - the distance we want the car to drive
    * @returns {number} - the updated odometer value
    *
@@ -117,7 +140,8 @@ class Car {
 
   /**
    * [Exercise 6C] Adds gallons to the tank
-   * @param {number} gallons - the gallons of fuel we want to put in the tank
+   * @param {number} gallons - the gallons of fuel we want to put in 
+   * the tank
    * @returns {number} - the miles that can be driven after refueling
    *
    * EXAMPLE
